@@ -59,7 +59,7 @@ h1 {
     margin-bottom: 1rem;
     text-decoration: none;
     text-align: center;
-    background-color: aqua;
+    background-color: #39B5E0;;
     border-radius: 3rem;
     color: #0c0f0c;
     font-weight: bold;
@@ -69,8 +69,9 @@ h1 {
 .button:hover {
     cursor: pointer;
     transform: scale(1.03);
-
+    box-shadow: 0 0.4rem 1.4rem 0 #39B5E0;
 }
+
 
 .button[disabled] :hover {
     cursor: not-allowed;
@@ -79,5 +80,9 @@ h1 {
 
 #scores-button {
     background-color: yellow;
+    
+}
 
+#scores-button:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 yellow;
 }

@@ -6,28 +6,32 @@ body {
     display: flex;
     margin-bottom: 1rem;
     font-size: 3rem;
-    border-radius: 2rem;
-    background-color: aqua;
+    /* border-radius: 5rem; */
+    background-color: white;
     width: 100%;
     min-width: 80rem;
-    padding: 1rem 2rem;
+  
  
 }
 
 .choice-container:hover {
     transform: scale(1.02);
     cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 #39B5E0;
 }
 
 .choice-prefix{
-    padding: 1rem;
-    color: blueviolet;
+    padding: 1.5rem 2.5rem;
+    color: #1A120B;
     font-weight: bold;
+    background-color: #39B5E0;
+   
 }
 
-#choice-text {
-    padding: 1rem;
-    color: black;
+.choice-text {
+    padding: 1.5rem;
+    color: #1A120B;
+    width: 100%;
 
 }
 
@@ -35,7 +39,7 @@ body {
     background-color: greenyellow;
 }
 
-.wrong {
+.incorrect {
     background-color: rgb(243, 113, 113);
 }
 
@@ -56,7 +60,7 @@ body {
     text-align: center;
 }
 
-#progressbar {
+#progressBar {
     width: 20rem;
     height: 3rem;
     border: 5px solid yellow;
@@ -65,7 +69,7 @@ body {
     margin-top: 1rem;
 }
 
-#progressbarFull {
+#progressBarFull {
     height: 100%;
     background-color: yellow;
     width: 0%;
