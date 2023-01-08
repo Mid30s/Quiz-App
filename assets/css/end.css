@@ -1,0 +1,34 @@
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+input {
+    width: 20rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    font-size: 2rem;
+    box-shadow: 0 0.1rem 1.4rem 0 #39B5E0;
+
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+#end-text {
+    color:#fff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#userName {
+    width:100%;
+    outline: none;
+}
+
+

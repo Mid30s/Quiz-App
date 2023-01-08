@@ -1,0 +1,19 @@
+
+#highScoresList { 
+    margin-bottom: 3rem;
+    font-size: 5rem;
+    line-height: 1.5;
+}
+
+#highScores {
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: yellow;
+    width: 100%;
+    max-width: 60rem;
+    border-radius: 5rem;
+}
+
+#finalScore {
+    color: black;
+}

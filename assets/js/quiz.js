@@ -65,9 +65,8 @@ let questions =[
     }
 ];
 
-
 function startTimer() {
-    timerCount = 20;
+    timerCount = 90;
     timer = setInterval(function() {
       timerCount--;
       timeEl.textContent = timerCount;
@@ -87,9 +86,9 @@ function startQuiz() {
 };
 
 function getNewQuestion() {
-
     if(questionAvailable.length===0 || questionCounter >= MAX_QUESTIONS) {
-        return window.location.assign("/end.html");
+        localStorage.setItem("recentScore",timerCount);
+        return window.location.assign("end.html");
     }
     
     questionCounter++;
@@ -125,21 +124,14 @@ choices.forEach(choice =>{
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
-
-            getNewQuestion();
-            
+            getNewQuestion(); 
         }, 1000);
 
-
         if (classToApply === 'incorrect') {
-            timerCount -=10;
-          
+            timerCount -=10;     
         }
     });
-
 });
-
-
 
 function init() {
     startQuiz();
