@@ -73,9 +73,11 @@ function startTimer() {
      
       if (timerCount <= 0) {
         clearInterval(timer);
-        alert("whoops! Time is Up! You can try again")
-        return window.location.assign("index.html");
+        timerCount = 0
+        alert("whoops! Time is Up!")
+        return window.location.assign("/Quiz-App/index.html");
       } 
+
     }, 1000);
   }
 
@@ -86,9 +88,9 @@ function startQuiz() {
 };
 
 function getNewQuestion() {
-    if(questionAvailable.length===0 || questionCounter >= MAX_QUESTIONS) {
+    if(questionAvailable.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("recentScore",timerCount);
-        return window.location.assign("end.html");
+        return window.location.assign("/Quiz-App/assets/html/end.html");
     }
     
     questionCounter++;
@@ -128,7 +130,7 @@ choices.forEach(choice =>{
         }, 1000);
 
         if (classToApply === 'incorrect') {
-            timerCount -=10;     
+            timerCount -=15;     
         }
     });
 });

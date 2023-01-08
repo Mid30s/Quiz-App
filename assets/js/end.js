@@ -13,7 +13,6 @@ userName.addEventListener("keyup",() =>{
 });
 
 function saveScore (e) {
-    console.log("click save button")
     e.preventDefault();
 
     const score = {
@@ -28,7 +27,7 @@ function saveScore (e) {
     highScores.splice(5);
 
     localStorage.setItem('highScores',JSON.stringify(highScores));
-    window.location.assign('index.html');
+    window.location.assign('/Quiz-App/index.html');
 };
 
  
