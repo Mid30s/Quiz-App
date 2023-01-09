@@ -9,8 +9,6 @@ body {
     background-color: white;
     width: 100%;
     min-width: 80rem;
-  
- 
 }
 
 .choice-container:hover {
@@ -19,21 +17,20 @@ body {
     box-shadow: 0 0.4rem 1.4rem 0 #39B5E0;
 }
 
-.choice-prefix{
+.choice-item{
     padding: 1.5rem 2.5rem;
     color: #1A120B;
     font-weight: bold;
     background-color: #39B5E0;
-   
 }
 
 .choice-text {
     padding: 1.5rem;
     color: #1A120B;
     width: 100%;
-
 }
 
+/* background-color when select answers*/
 .correct {
     background-color: greenyellow;
 }
@@ -44,20 +41,19 @@ body {
 
 
 
-#hud {
+#top-container {
     display: flex;
    justify-content: space-between;
 }
 
-.hud-prefix {
+.top-container-item-title {
     text-align: center;
     font-size: 2rem;
-    
 }
 
-.hud-main-text {
+/* .time-text {
     text-align: center;
-}
+} */
 
 #progressBar {
     width: 20rem;

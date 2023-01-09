@@ -8,6 +8,7 @@ const MAX_HIGH_SCORES= 5 ;
 
 finalScore.innerText = recentScore;
 
+/*add eventlistener to enable the save button*/
 userName.addEventListener("keyup",() =>{
     saveButton.disabled = !userName.value;
 });
@@ -19,8 +20,11 @@ function saveScore (e) {
         score: recentScore,
         name: userName.value
     };
+    
 
+    
     highScores.push(score);
+    /*sort top 5 high scores*/
     highScores.sort((a,b) => {
         return b.score - a.score;
     });

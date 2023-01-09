@@ -9,21 +9,20 @@
     <title>Thanks for Playing!</title>
 </head>
 <body>
-    <div class="container">
-        <div id="end" class="flex-column flex-center">
+    <section class="container">
+        <div class="flex-column flex-center">
             <h1 id="finalScore">0</h1>
             <form action="" class="form-container">
-                <h2 id="end-text">Enter your initials below to save your score!</h2>
+                <h2 id="save-text">Enter your initials below to save your score!</h2>
 
                 <input type="text" name="name" id="userName"  placeholder="Enter your initials to save"> 
                 <button class="button" id="saveButton" type="submit" onclick="saveScore(event)" disabled>Save</button>
-
             </form>
             <a href="/Quiz-App/assets/html/quiz.html" class="button">Play Again!</a>
             <a href="/Quiz-App/index.html" class="button">Go Home</a>
+            <a href="/Quiz-App/assets/html/scores.html" class="button" id="scores-button">High Scores</a>
         </div>
-
-    </div>
+    </section>
     
     <script src="/Quiz-App/assets/js/end.js"></script>
 </body>
