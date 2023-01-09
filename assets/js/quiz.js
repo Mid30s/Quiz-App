@@ -13,7 +13,7 @@ var timer;
 var timerCount;
 const MAX_QUESTIONS= 4 ;
 
-
+/* question array*/
 let questions =[
     {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -65,6 +65,7 @@ let questions =[
     }
 ];
 
+/* when loading the page,start timer function*/
 function startTimer() {
     timerCount = 90;
     timer = setInterval(function() {
@@ -81,6 +82,7 @@ function startTimer() {
     }, 1000);
   }
 
+  /*when loading the page, start the quiz function*/
 function startQuiz() {
     questionCounter = 0;
     questionAvailable = [...questions]
@@ -88,19 +90,23 @@ function startQuiz() {
 };
 
 function getNewQuestion() {
+    /* when question running out or finish the MAX QUESTIONS it will store the timer and return to next page*/
     if(questionAvailable.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("recentScore",timerCount);
         return window.location.assign("/Quiz-App/assets/html/end.html");
     }
     
+    /*top container progressBar and progress text*/
     questionCounter++;
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
+    /*random get questions from questionAvailable array*/
     const questionIndex = Math.floor(Math.random() * questionAvailable.length);
     currentQuestion = questionAvailable[questionIndex]
     question.innerText = currentQuestion.question
-
+    
+    /*use forEach()method to executes a function for each array element*/
     choices.forEach(choice=> {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
@@ -110,31 +116,34 @@ function getNewQuestion() {
     acceptingAnswers = true;
 };
 
- 
+/*use forEach()method to executes a function for each array element*/
 choices.forEach(choice =>{
     choice.addEventListener('click',e =>{
         if(!acceptingAnswers) 
         return;
-
         acceptingAnswers = false;
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset["number"];
-
+        
+        /*choose the class when click a choice*/
         let classToApply = selectedAnswer == currentQuestion.theAnswer ? 'correct' :'incorrect'
 
         selectedChoice.parentElement.classList.add(classToApply);
 
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
-            getNewQuestion(); 
-        }, 1000);
-
+        /*time penalty 15 seconds when select incorrect */
         if (classToApply === 'incorrect') {
             timerCount -=15;     
         }
+
+        /*set a 1 second timer to remove choice class and get the next question */
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion(); 
+        }, 1000);     
     });
 });
 
+/*loading page*/
 function init() {
     startQuiz();
     startTimer();

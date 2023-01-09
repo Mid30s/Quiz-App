@@ -8,21 +8,22 @@ const MAX_HIGH_SCORES= 5 ;
 
 finalScore.innerText = recentScore;
 
-/*add eventlistener to enable the save button*/
+/*add eventlistener to enable the save button before type in initials*/
 userName.addEventListener("keyup",() =>{
     saveButton.disabled = !userName.value;
 });
 
-function saveScore (e) {
-    e.preventDefault();
+/*add click eventlistener to call the function*/
+saveButton.addEventListener("click", function(event){
+
+    event.preventDefault();
 
     const score = {
         score: recentScore,
         name: userName.value
     };
     
-
-    
+    /*create new array*/
     highScores.push(score);
     /*sort top 5 high scores*/
     highScores.sort((a,b) => {
@@ -31,7 +32,8 @@ function saveScore (e) {
     highScores.splice(5);
 
     localStorage.setItem('highScores',JSON.stringify(highScores));
+    /*return to home page*/
     window.location.assign('/Quiz-App/index.html');
-};
+});
 
  

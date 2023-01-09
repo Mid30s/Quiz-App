@@ -2,45 +2,7 @@ body {
     color: #fff;
 }
 
-.choice-container {
-    display: flex;
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    background-color: white;
-    width: 100%;
-    min-width: 80rem;
-}
-
-.choice-container:hover {
-    transform: scale(1.02);
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 #39B5E0;
-}
-
-.choice-item{
-    padding: 1.5rem 2.5rem;
-    color: #1A120B;
-    font-weight: bold;
-    background-color: #39B5E0;
-}
-
-.choice-text {
-    padding: 1.5rem;
-    color: #1A120B;
-    width: 100%;
-}
-
-/* background-color when select answers*/
-.correct {
-    background-color: greenyellow;
-}
-
-.incorrect {
-    background-color: rgb(243, 113, 113);
-}
-
-
-
+/*top container progressBar and time*/
 #top-container {
     display: flex;
    justify-content: space-between;
@@ -50,10 +12,6 @@ body {
     text-align: center;
     font-size: 2rem;
 }
-
-/* .time-text {
-    text-align: center;
-} */
 
 #progressBar {
     width: 20rem;
@@ -67,9 +25,51 @@ body {
 #progressBarFull {
     height: 100%;
     background-color: yellow;
+    /*start from 0% width*/
     width: 0%;
 }
 
+/* main container*/
+.choice-container {
+    display: flex;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    background-color: white;
+    width: 100%;
+    min-width: 80rem;
+}
+
+/*hover*/
+.choice-container:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 #39B5E0;
+}
+
+/*choice item number A/B/C/D */
+.choice-item{
+    padding: 1.5rem 2.5rem;
+    color: #1A120B;
+    font-weight: bold;
+    background-color: #39B5E0;
+}
+
+/*choice answer text*/
+.choice-text {
+    padding: 1.5rem;
+    color: #1A120B;
+    /* 100% width to make sure user can click anywhere in the text*/
+    width: 100%;
+}
+
+/* background-color when select answers*/
+.correct {
+    background-color: greenyellow;
+}
+
+.incorrect {
+    background-color: rgb(243, 113, 113);
+}
 
 
 @media screen and (max-width:768px) {

@@ -9,12 +9,13 @@
     font-size: 65%;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+/*js logo*/
 img {
     width: 200px;
     margin-bottom: 5rem;
 }
 
+/* style all h1 in all html files*/
 h1 {
     font-size: 4rem;
     color: #fff;
@@ -64,6 +65,7 @@ h1 {
     box-shadow: 0 0.4rem 1.4rem 0 #39B5E0;
 }
 
+/*high score button for all html files*/
 #scores-button {
     background-color: yellow; 
 }
